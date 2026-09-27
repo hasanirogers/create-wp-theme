@@ -1,0 +1,36 @@
+{
+  "name": "create-wp-theme",
+  "version": "1.0.0",
+  "description": "A command line tool for creating WordPress themes.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsc --watch",
+    "exec": "tsx index.ts",
+    "prepublishOnly": "npm run build",
+    "relink": "npm run build && npm unlink -g create-wp-theme && npm link",
+    "test:cli": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-wp-theme": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "keywords": [],
+  "author": "Hasani Rogers <contact@deificarts.com>",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@clack/prompts": "^1.0.1",
+    "execa": "^9.6.1",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

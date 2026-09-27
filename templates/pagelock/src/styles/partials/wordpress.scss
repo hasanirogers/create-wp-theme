@@ -1,0 +1,10 @@
+@use './helpers.scss';
+
+.alignfull {
+  @extend %align-full;
+}
+
+.alignwide {
+  @extend %align-wide;
+}
+
