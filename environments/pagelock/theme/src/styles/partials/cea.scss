@@ -1,0 +1,28 @@
+@use './helpers.scss' as *;
+
+kemet-rotator {
+  width: 80%;
+  margin: auto;
+
+  &::part(slide) {
+    width: 100%;
+  }
+}
+
+business-calendly {
+  --height: 86vh;
+
+  display: flex;
+  width: 100%;
+  min-height: var(--height);
+
+  & > * {
+    flex: 1px;
+    height: 100%;
+    min-height: var(--height);
+  }
+
+  iframe {
+    height: 100%;
+  }
+}

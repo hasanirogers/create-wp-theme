@@ -1,0 +1,30 @@
+{
+  "name": "pagelock",
+  "version": "1.0.0",
+  "description": "A create-wp-env template for simple one page sites that lock on each section.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run rimraf && vite build",
+    "dev": "vite",
+    "rimraf": "rimraf ./build"
+  },
+  "author": "Deific Arts LLC <contact@deificarts.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/block-editor": "^15.1.0",
+    "@wordpress/blocks": "^15.1.0",
+    "@wordpress/element": "^6.28.0",
+    "@wordpress/i18n": "^6.1.0",
+    "kemet-ui": "^5.0.5",
+    "lit": "^3.2.1",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1",
+    "sass": "^1.86.0",
+    "typescript": "^5.9.2"
+  }
+}

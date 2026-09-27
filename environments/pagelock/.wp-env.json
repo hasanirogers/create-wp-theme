@@ -1,0 +1,15 @@
+{
+    "core": null,
+    "phpVersion": null,
+    "themes": ["./theme"],
+    "port": 3350,
+    "testsEnvironment": false,
+    "config": {
+      "WP_DEBUG": true,
+      "WP_DEBUG_LOG": "./error.log",
+      "FS_METHOD": "direct"
+    },
+    "mappings": {
+      ".htaccess": "./.htaccess"
+    }
+  }

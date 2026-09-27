@@ -1,0 +1,21 @@
+{
+  "name": "pagelock",
+  "version": "1.0.0",
+  "description": "A create-wp-env environment.",
+  "main": "index.js",
+  "scripts": {
+    "log": "wp-env logs development",
+    "logs": "wp-env logs",
+    "path": "wp-env install-path",
+    "plugins": "wp-env run cli wp plugin install updraftplus autoptimize wordpress-seo wp-mail-smtp",
+    "start": "wp-env start",
+    "stop": "wp-env stop all",
+    "reset": "wp-env reset",
+    "update": "wp-env start --update"
+  },
+  "author": "Deific Arts LLC <contact@deificarts.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^11.15.0"
+  }
+}
