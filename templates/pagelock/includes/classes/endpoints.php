@@ -15,8 +15,9 @@ Class Endpoints {
         $subject = get_theme_mod('business-contact-form-subject');
         $fullName = $request->get_param('fullname');
         $email = $request->get_param('email');
+        $message = $request->get_param('message');
 
-        $requiredFieldsFilled = !empty($to) && !empty($email) && !empty($message);
+        $requiredFieldsFilled = !empty($fullName) && !empty($email) && !empty($message);
 
         if (!$requiredFieldsFilled) {
           return array(
