@@ -9,7 +9,7 @@
     <section slot="body">
       <header>
         <div>
-          <button id="drawer-toggle">
+          <button id="drawer-toggle" title="Toggle Drawer">
             <kemet-icon name="list" size="32"></kemet-icon>
           </button>
           <a href="<?php echo home_url('/home'); ?>">
