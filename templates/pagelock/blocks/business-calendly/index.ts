@@ -20,14 +20,16 @@ import './style.scss';
 import Edit from './edit';
 import Save from './save';
 import metadata from './block.json';
-import Attributes from './attributes';
+import Attributes, { type BusinessCalendlyAttributes } from './attributes';
 
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType(metadata.name, {
+registerBlockType<BusinessCalendlyAttributes>(metadata.name, {
+	title: metadata.title,
+	category: metadata.category,
 	/**
 	 * @see ./edit.ts
 	 */

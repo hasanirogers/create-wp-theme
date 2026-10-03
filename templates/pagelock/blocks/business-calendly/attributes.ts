@@ -1,3 +1,9 @@
+export type BusinessCalendlyAttributes = {
+	url: string;
+	height: string;
+	minWidth: string;
+};
+
 export default {
 	url: {
 		type: 'string',

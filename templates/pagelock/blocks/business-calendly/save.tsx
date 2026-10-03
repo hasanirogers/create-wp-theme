@@ -1,4 +1,6 @@
 import * as React from "react";
+import type { BlockSaveProps } from '@wordpress/blocks';
+import type { BusinessCalendlyAttributes } from './attributes';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -19,7 +21,7 @@ import * as React from "react";
   */
 
 
- const Save = ({attributes}) => {
+ const Save = ({ attributes }: BlockSaveProps<BusinessCalendlyAttributes>) => {
    const { url, height, minWidth } = attributes;
 
    return (

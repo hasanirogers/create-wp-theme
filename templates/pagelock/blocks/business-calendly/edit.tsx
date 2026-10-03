@@ -1,14 +1,4 @@
 import React from 'react';
-// import { createComponent } from '@lit/react';
-// import BusinessCalendlyClass from '../../src/elements/business-calendly/business-calendly';
-
-// export const BusinessCalendly = createComponent({
-//   tagName: 'business-calendly',
-//   elementClass: BusinessCalendlyClass,
-//   react: React,
-// });
-
-// console.log(BusinessCalendly);
 import '../../src/elements/business-calendly';
 
 /**
@@ -27,6 +17,8 @@ import { __ } from '@wordpress/i18n';
 
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
+import type { BlockEditProps } from '@wordpress/blocks';
+import type { BusinessCalendlyAttributes } from './attributes';
 
 
 /**
@@ -47,7 +39,7 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 
-const Edit = ({ attributes, setAttributes }) => {
+const Edit = ({ attributes, setAttributes }: BlockEditProps<BusinessCalendlyAttributes>) => {
 	const { url, minWidth, height } = attributes;
   const blockProps = useBlockProps();
 
@@ -60,7 +52,7 @@ const Edit = ({ attributes, setAttributes }) => {
           <TextControl label="Height" value={height} onChange={(newHeight) => setAttributes({ height: newHeight })} />
         </PanelBody>
       </InspectorControls>,
-      <business-calendly mode="edit" {...blockProps} class="block-editor-rich-text__editable block-editor-block-list__block wp-block wp-block-paragraph rich-text"></business-calendly>
+      <business-calendly mode="edit" {...blockProps} className={`${blockProps.className} block-editor-rich-text__editable block-editor-block-list__block wp-block wp-block-paragraph rich-text`}></business-calendly>
 	  </>
   );
 }

@@ -1,5 +1,5 @@
 {
-  "name": "pagelock",
+  "name": "{{themeSlug}}",
   "version": "1.0.0",
   "description": "A create-wp-env template for simple one page sites that lock on each section.",
   "main": "index.js",

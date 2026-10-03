@@ -44,7 +44,7 @@ if (!class_exists('\business\Theme')) {
       add_action('admin_enqueue_scripts', array($this, 'add_assets_admin'));
 
       // enqueue fonts
-      add_action('wp_enqueue_scripts', array($this, 'add_fonts'));
+      // add_action('wp_enqueue_scripts', array($this, 'add_fonts'));
 
       // meta info
       add_action('wp_head', array($this, 'add_meta_tags'));
@@ -94,8 +94,8 @@ if (!class_exists('\business\Theme')) {
         self::enqueue_vite_client();
         wp_enqueue_script('bundle-js', 'http://localhost:5173/src/frontend.ts', array('vite-client'), null, true);
       } else {
-        wp_enqueue_style('bundle-css', get_theme_file_uri('/build/frontend.css'), array(), null);
-        wp_enqueue_script('bundle-js', get_theme_file_uri('/build/frontend.js'), array(), null, true);
+        wp_enqueue_style('bundle-css', get_theme_file_uri('/build/frontend.css'), array(), filemtime(get_theme_file_path('/build/frontend.css')));
+        wp_enqueue_script('bundle-js', get_theme_file_uri('/build/frontend.js'), array(), filemtime(get_theme_file_path('/build/frontend.js')), true);
       }
 
       wp_enqueue_style('parent-css', get_template_directory_uri() . '/style.css');
@@ -106,8 +106,8 @@ if (!class_exists('\business\Theme')) {
         self::enqueue_vite_client();
         wp_enqueue_script('admin-js', 'http://localhost:5173/src/admin.ts', array('vite-client', 'wp-blocks', 'wp-block-editor', 'wp-components', 'wp-element'), null, true);
       } else {
-        wp_enqueue_style('admin-css', get_theme_file_uri('/build/admin.css'));
-        wp_enqueue_script('admin-js', get_theme_file_uri('/build/admin.js'), array('wp-blocks', 'wp-block-editor', 'wp-components', 'wp-element'), false, true);
+        wp_enqueue_style('admin-css', get_theme_file_uri('/build/admin.css'), array(), filemtime(get_theme_file_path('/build/admin.css')));
+        wp_enqueue_script('admin-js', get_theme_file_uri('/build/admin.js'), array('wp-blocks', 'wp-block-editor', 'wp-components', 'wp-element'), filemtime(get_theme_file_path('/build/admin.js')), true);
       }
     }
 
